@@ -1,0 +1,43 @@
+{
+  "name": "transcode-kz-cli",
+  "version": "1.0.0",
+  "description": "Transcoding Kazakh from Cyrillic to Latin",
+  "author": "Ardak Saduakassov",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "release": "npx gulp",
+    "clean": "rm -rf out dist",
+    "test": "npx ts-mocha spec/*"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.14.0",
+    "chai": "^4.3.7",
+    "gulp": "^4.0.2",
+    "gulp-chmod": "^3.0.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardaqs/transcode-kz-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ardaqs/transcode-kz-cli/issues"
+  },
+  "homepage": "https://github.com/ardaqs/transcode-kz-cli#readme",
+  "keywords": ["kazakh", "cyrillic", "latin", "convert", "transcode", "text", "json", "encoding"]
+}
