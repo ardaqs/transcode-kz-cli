@@ -31,10 +31,11 @@ function showInfo() {
 parseArgs();
 showInfo();
 
-const direction = 'cyr2lat';
-
 let srcText: string | undefined;
 let dstText: string | undefined;
+
+let direction = 'cyr2lat';
+let parseJson = false;
 
 switch (params.device) {
   case Device.Console:
@@ -45,8 +46,16 @@ switch (params.device) {
     break;
 }
 
+switch (params.format) {
+  case Format.Text:
+    break;
+  case Format.Json:
+    parseJson = true;
+    break;
+}
+
 if (srcText) {
-  dstText = transcode(srcText, direction, false);
+  dstText = transcode(srcText, direction, parseJson);
 }
 
 if (params.device == Device.Console && dstText) {
