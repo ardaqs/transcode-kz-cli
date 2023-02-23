@@ -17,6 +17,9 @@ export const man = `\u001b[1mNAME\u001b[0m
         \u001b[1mtext\u001b[0m \u001b[2m(default)\u001b[0m  - transcode as plain text
         \u001b[1mjson\u001b[0m            - transcode only string values in the JSON
 
+    \u001b[1m-i\u001b[0m=\u001b[4mINDENT\u001b[0m, \u001b[1m--indent\u001b[0m=\u001b[4mINDENT\u001b[0m
+        Number of spaces used for indentation in structured formats like JSON. The default value is 2.
+
     \u001b[1m-h\u001b[0m, \u001b[1m--help\u001b[0m
         Display this help and exit
 
@@ -24,7 +27,7 @@ export const man = `\u001b[1mNAME\u001b[0m
     \u001b[1mtranscode-kz-cli\u001b[0m "Қазақша мәтін"
     \u001b[1mtranscode-kz-cli\u001b[0m -f=json "{ \\\"country\\\": \\\"Қазақстан\\\" }"
     \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=text doc-cyr.txt doc-lat.txt
-    \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=json src/assets/i18n/kk-Cyrl.json src/assets/i18n/kk-Latn.json
+    \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=json -i=4 src/assets/i18n/kk-Cyrl.json src/assets/i18n/kk-Latn.json
     \u001b[1mtranscode-kz-cli\u001b[0m -h
 `;
 

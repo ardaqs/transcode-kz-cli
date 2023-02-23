@@ -61,6 +61,22 @@ function parseFormatArg() {
   }
 }
 
+function parseIndentArg() {
+  let entry = args.find((value) => value.startsWith('-i') || value.startsWith('--indent'));
+  if (entry) {
+    const parts = entry.split('=');
+    if (parts.length == 2) {
+      try {
+        params.indent = Number.parseInt(parts[1]);
+      } catch(e: any) {
+        exitWithError(Message.errWrongArgs);
+      }
+    } else {
+      exitWithError(Message.errWrongArgs);
+    }
+  }
+}
+
 function parsePositionalArgs() {
   const posArgs = args.filter(value => !value.startsWith('-'));
   if (posArgs.length == 0) {
@@ -70,7 +86,7 @@ function parsePositionalArgs() {
     params.source = posArgs[0];
   }
   if (posArgs.length > 1) {
-    params.source = posArgs[1];
+    params.dest = posArgs[1];
   }
 }
 
@@ -80,6 +96,7 @@ export const parseArgs = () => {
 
   parseDeviceArg();
   parseFormatArg();
+  parseIndentArg();
 
   parsePositionalArgs();
 }

@@ -1,0 +1,15 @@
+{
+  "example": "Ülgı",
+  "address": {
+    "country": "Memleket",
+    "city": "Qala",
+    "street": "Köşe",
+    "house": "Üi",
+    "apt": "Päter"
+  },
+  "colors": [
+    "Qyzyl",
+    "Jasyl",
+    "Kök"
+  ]
+}

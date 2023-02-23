@@ -1,3 +1,5 @@
+import { readFileSync, writeFileSync } from 'fs';
+
 import * as Message from './messages';
 import { parseArgs } from './args';
 import { Device, Format, params } from './params';
@@ -31,20 +33,8 @@ function showInfo() {
 parseArgs();
 showInfo();
 
-let srcText: string | undefined;
-let dstText: string | undefined;
-
 let direction = 'cyr2lat';
 let parseJson = false;
-
-switch (params.device) {
-  case Device.Console:
-    srcText = params.source;
-    break;
-  case Device.File:
-
-    break;
-}
 
 switch (params.format) {
   case Format.Text:
@@ -54,12 +44,32 @@ switch (params.format) {
     break;
 }
 
-if (srcText) {
-  dstText = transcode(srcText, direction, parseJson);
+let srcText: string | undefined;
+let dstText: string | undefined;
+
+switch (params.device) {
+  case Device.Console:
+    srcText = params.source;
+    break;
+  case Device.File:
+    if (!!params.source) {
+      srcText = readFileSync(params.source, { encoding: 'utf8', flag: 'r' })
+    }
+    break;
 }
 
-if (params.device == Device.Console && dstText) {
-  console.log(dstText);
+if (srcText != undefined) {
+  dstText = transcode(srcText, direction, parseJson, params.indent);
+}
+
+if (dstText != undefined) {
+  if (params.device == Device.Console) {
+    console.log(dstText);
+  } else if (params.device == Device.File) {
+    if (!!params.dest) {
+      writeFileSync(params.dest, dstText, { encoding: 'utf8', flag: 'w', mode: 0o664 });
+    }
+  }
 }
 
 console.log(Message.success);
