@@ -1,6 +1,6 @@
 import * as Message from './messages';
 import { exitWithError } from './sysUtils';
-import { Device, Format, options } from './options';
+import { Device, Format, params } from './params';
 
 const [,, ...args] = process.argv;
 
@@ -25,10 +25,10 @@ function parseDeviceArg() {
       const lcValue = parts[1].toLowerCase();
       switch (lcValue) {
         case 'console': 
-          options.device = Device.Console;
+          params.device = Device.Console;
           break;
         case 'file': 
-          options.device = Device.File;
+          params.device = Device.File;
           break;
         default:
           exitWithError(Message.errWrongArgs);
@@ -47,10 +47,10 @@ function parseFormatArg() {
       const lcValue = parts[1].toLowerCase();
       switch (lcValue) {
         case 'text': 
-          options.format = Format.Text;
+          params.format = Format.Text;
           break;
         case 'json': 
-          options.format = Format.Json;
+          params.format = Format.Json;
           break;
         default:
           exitWithError(Message.errWrongArgs);
@@ -61,10 +61,25 @@ function parseFormatArg() {
   }
 }
 
+function parsePositionalArgs() {
+  const posArgs = args.filter(value => !value.startsWith('-'));
+  if (posArgs.length == 0) {
+    exitWithError(Message.errWrongArgs);
+  }
+  if (posArgs.length > 0) {
+    params.source = posArgs[0];
+  }
+  if (posArgs.length > 1) {
+    params.source = posArgs[1];
+  }
+}
+
 export const parseArgs = () => {
   parseArgsCount();
   parseHelpArg();
 
   parseDeviceArg();
   parseFormatArg();
+
+  parsePositionalArgs();
 }

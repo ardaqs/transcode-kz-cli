@@ -1,16 +1,16 @@
 export enum Device { Console, File }
 export enum Format { Text, Json }
 
-export interface Options {
+export interface Params {
   device: Device;
   format: Format;
-  src: string|undefined;
-  dst: string|undefined;
+  source: string|undefined;
+  dest: string|undefined;
 }
 
-export let options: Options = {
+export let params: Params = {
   device: Device.Console,
   format: Format.Text,
-  src: undefined,
-  dst: undefined
+  source: undefined,
+  dest: undefined
 }
