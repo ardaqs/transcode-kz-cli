@@ -25,8 +25,8 @@ export const man = `\u001b[1mNAME\u001b[0m
 
 \u001b[1mEXAMPLES\u001b[0m
     \u001b[1mtranscode-kz-cli\u001b[0m "Қазақша мәтін"
-    \u001b[1mtranscode-kz-cli\u001b[0m -f=json "{ \\\"country\\\": \\\"Қазақстан\\\" }"
-    \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=text doc-cyr.txt doc-lat.txt
+    \u001b[1mtranscode-kz-cli\u001b[0m -f=json "{ \\\"city\\\": \\\"Қала\\\" }"
+    \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=text cyr.txt lat.txt
     \u001b[1mtranscode-kz-cli\u001b[0m -d=file -f=json -i=4 src/assets/i18n/kk-Cyrl.json src/assets/i18n/kk-Latn.json
     \u001b[1mtranscode-kz-cli\u001b[0m -h
 `;

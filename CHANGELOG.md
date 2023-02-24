@@ -2,6 +2,6 @@
 
 ## v1.0.0
 
-_2023-02-22_
+_2023-02-23_
 
-- Initial implementation
+- Initial release

@@ -17,6 +17,7 @@
     "test": "npx ts-mocha spec/*"
   },
   "dependencies": {
+    "transcode-kz": "^1.0.2"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
@@ -41,5 +42,14 @@
     "url": "https://github.com/ardaqs/transcode-kz-cli/issues"
   },
   "homepage": "https://github.com/ardaqs/transcode-kz-cli#readme",
-  "keywords": ["kazakh", "cyrillic", "latin", "convert", "transcode", "text", "json", "encoding"]
+  "keywords": [
+    "kazakh",
+    "cyrillic",
+    "latin",
+    "convert",
+    "transcode",
+    "text",
+    "json",
+    "encoding"
+  ]
 }
