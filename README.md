@@ -34,10 +34,10 @@ npx transcode-kz-cli --device=file --format=json --indent=4 cyr.json lat.json
 npm install -g transcode-kz-cli
 ```
 
-## Dependencies
-
-* [transcode-kz](https://www.npmjs.com/package/transcode-kz)
-
 ## License
 
 [LICENSE (MIT)](LICENSE)
+
+## See also
+
+* [transcode-kz](https://www.npmjs.com/package/transcode-kz) &nbsp;&nbsp; – Library for transcoding Kazakh between Cyrillic and Latin encodings.
