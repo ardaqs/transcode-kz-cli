@@ -1,6 +1,6 @@
 {
   "name": "transcode-kz-cli",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Transcoding Kazakh from Cyrillic to Latin",
   "author": "Ardak Saduakassov",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "test": "npx ts-mocha spec/*"
   },
   "dependencies": {
-    "transcode-kz": "^1.0.4"
+    "transcode-kz": "^1.1.0"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
